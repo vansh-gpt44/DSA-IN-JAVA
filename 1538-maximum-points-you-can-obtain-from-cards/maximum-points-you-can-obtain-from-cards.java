@@ -10,7 +10,7 @@ class Solution {
         for(int i=k-1;i>=0;i--){
             lsum-=cardPoints[i];
             rsum+=cardPoints[minlen];
-            minlen=minlen-1;
+            minlen--;
             maxsum=Math.max(maxsum,lsum+rsum);
         }
         return maxsum;
