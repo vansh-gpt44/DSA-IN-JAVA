@@ -3,11 +3,7 @@ class Solution {
         if(n==1){
             return 1;
         }
-        int count=0;
-        int i=1;
-        int sumodd=0,sumeven=0;
-        int num=0;
-        int sum=0;
+        int count=0,i=1,sumodd=0,sumeven=0,num=0;
         while(count<n*2){
             if(i%2==0){
                 sumeven+=i;
@@ -19,17 +15,19 @@ class Solution {
             }
             i++;
         }
+        i=0;
+        count=0;
         if(sumodd<sumeven){
-            num=sumodd;
+            count=sumodd;
         }
         else{
-            num=sumeven;
+            count=sumeven;
         }
-        for(int j=2;j<num;j++){
-            if(sumodd%j==0 && sumeven%j==0){
-                sum=j;
+        for(i=2;i<count;i++){
+            if(sumodd%i==0 && sumeven%i==0){
+                num=i;
             }
         }
-        return sum;
+        return num;
     }
 }
